@@ -28,7 +28,7 @@ const Cart = () => {
                     items.map(item=>{
                         return(
                           <li className="collection-item avatar">
-                            <img src={item.img} className="circle" />
+                            <img src={item.img} alt="img" className="circle" />
                             <span className="title truncate">{item.name}</span>
                             <p className="green-text">Price - ₹ {item.price} x {item.quantity} = ₹{item.itemTotal}</p>
                             <i onClick={()=>removeItem(item.id)} className="secondary-content material-icons red-text">remove_circle</i>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { useMutation } from '@apollo/client';
-import { SIGNUP_USER, LOGIN_USER } from '../gqloperation/mutation';
+import { LOGIN_USER } from '../gqloperation/mutation';
 import { useNavigate } from 'react-router';
 
 const Login = () => {

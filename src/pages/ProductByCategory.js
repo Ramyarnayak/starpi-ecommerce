@@ -5,7 +5,7 @@ import { GET_PRODUCT_BY_CATEGORY } from '../gqloperation/queries';
 import Card  from '../components/Card'
 const ProductByCategory = () => {
     const {cid} = useParams()
-    const {loading,data,error} =  useQuery(GET_PRODUCT_BY_CATEGORY,{
+    const {loading,data} =  useQuery(GET_PRODUCT_BY_CATEGORY,{
         variables:{
             categoryId:cid
         }

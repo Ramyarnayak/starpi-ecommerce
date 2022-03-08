@@ -7,7 +7,7 @@ import Pagination from '../components/Pagination';
 
 const Home = () => {
     const [page,setPage] = useState(1)
-    const {loading,error,data,refetch} = useQuery(GET_ALL_PRODUCTS,{
+    const {loading,data,refetch} = useQuery(GET_ALL_PRODUCTS,{
         variables:{
             "pagination": {
               "page": page,
@@ -17,8 +17,8 @@ const Home = () => {
     })
 
     useEffect(() => {
-       if(page !=1) refetch() 
-    }, [page])
+       if(page !== 1) refetch() 
+    }, [page, refetch])
 
     const updatePage = (page)=>{
         setPage(page)

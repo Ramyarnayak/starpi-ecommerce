@@ -35,7 +35,7 @@ const Product = () => {
             <Carousel plugins={['arrows']}>
             {
                 images.data.map(({attributes})=>{
-                    return <img style={{height:"50vh"}} src={BACKEND_URL+attributes.url} />
+                    return <img alt="img" style={{height:"50vh"}} src={BACKEND_URL+attributes.url} />
                 })
             }
             </Carousel>
