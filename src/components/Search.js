@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 const Search = () => {
      const [nameQuery,setNameQuery] = useState("")
      const [hideResult,sethideResult] = useState(true)
-     const [getProduct,{data,loading,error}] = useLazyQuery(GET_PRODUCT_BY_NAME,{
+     const [getProduct,{data}] = useLazyQuery(GET_PRODUCT_BY_NAME,{
          variables:{
             "filters": {
               "name": {
@@ -16,16 +16,13 @@ const Search = () => {
      })
 
      useEffect(() => {
-       if(nameQuery.length != 0){
+       if(nameQuery.length !== 0){
            getProduct()
            sethideResult(false)
        } else{
            sethideResult(true)
        }
-        //  return () => {
-        //      cleanup
-        //  }
-     }, [nameQuery])
+     }, [nameQuery, getProduct])
 
 
      const handleChange=(e)=>{

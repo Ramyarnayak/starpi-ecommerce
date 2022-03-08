@@ -7,7 +7,7 @@ const Card = ({id,name,price,description,img}) => {
         <Link className="pcard" to={`/product/${id}`}>
         <div className="card">
             <div className="card-image">
-              <img className="cimg" src={`${BACKEND_URL+img}`}/>   
+              <img className="cimg" alt="img" src={`${BACKEND_URL+img}`}/>   
             </div>
              <div className="card-content black-text">
              <span className="card-title truncate">{name}</span>

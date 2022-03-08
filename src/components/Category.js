@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import {GET_ALL_CATEGORIES} from '../gqloperation/queries'
 import { Link } from 'react-router-dom';
 const Category = () => {
-    const {data,loading,error} =  useQuery(GET_ALL_CATEGORIES)
+    const {data,loading} =  useQuery(GET_ALL_CATEGORIES)
     if(loading) return <h1>categories are loading..</h1>
     return (
         <div className="category">

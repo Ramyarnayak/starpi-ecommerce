@@ -8,7 +8,6 @@ import {
 } from '@stripe/react-stripe-js';
 import { useCart } from 'react-use-cart';
 import {BACKEND_URL} from '../helpers'
-import axios from 'axios'
 
 const stripePromise = loadStripe('pk_test_51Kax3DGgeNldCACGeY07Ie7OMhY4qs5iWDkhxGm4sKW3yORp8UNnYKUoSg7wJ68uladmJhajlLnv0THHHKQdFlUx009nFm8Qg8');
 
@@ -18,7 +17,6 @@ const CheckoutForm = () => {
     const [payProcessing,setPayProcessing] = useState(false)
     const [error,setError] = useState(false)
     const [done,setDone] = useState(false)
-
     const stripe = useStripe();
     const elements = useElements();
     const {cartTotal,items,emptyCart} = useCart()
@@ -44,25 +42,8 @@ const CheckoutForm = () => {
     
             })
           
-            // const res = await axios.post(`${BACKEND_URL}/api/orders`, {
-            //     allformData
-            // })
-
-            // let config = {
-            //     headers:{
-            //                 "Content-Type":"application/json",
-            //                 "Authorization":"Bearer "+localStorage.getItem("jwt")
-            //             },
-            //   }
-              
-            //   let data = {
-            //     allformData
-            //   }
-              
-            // const res=  await axios.post(`${BACKEND_URL}/api/orders`, data, config).then((res)=>{
-            //       alert(res)
-            //   })
-            if(res.status != 200) throw Error('Payment failed')
+           
+            if(res.status !== 200) throw Error('Payment failed')
             return await res.json()
         }catch(err){
             console.log(err)
